@@ -31,7 +31,7 @@ class DiceRoll extends StatefulWidget {
 
 class _DiceRollState extends State<DiceRoll> {
   var rng = new Random();
-  int _roll = 0;
+  int _roll = 1;
 
   List diceList = [
     AssetImage('assets/dice1.png'),
@@ -56,14 +56,12 @@ class _DiceRollState extends State<DiceRoll> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             new Text(
-              'Hit the \'+\' to generate a new roll!',
-            ),
-            new Text(
-              '$_roll',
+              'Hit the \'+\' to generate a new roll!\n',
             ),
             new Image(
               image: diceList[_roll - 1],
-            )
+            ),
+            new Text('Your rolled ' + '$_roll'),
           ],
         ),
       ),
